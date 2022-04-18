@@ -5,10 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-//@SpringBootApplication
 @SpringBootApplication
-public class SpringbootSecurityJwtRestApiDynamicMultiTenancyMysqlPostgresqlApplication
-        extends SpringBootServletInitializer {
+public class SpringbootSecurityJwtRestApiDynamicMultiTenancyMysqlPostgresqlApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {

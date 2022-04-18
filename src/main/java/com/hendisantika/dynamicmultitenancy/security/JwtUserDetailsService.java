@@ -16,16 +16,14 @@ import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * Project :
- * springboot-security-jwt-rest-api-dynamic-multi-tenancy-mysql-postgresql
+ * Project : springboot-security-jwt-rest-api-dynamic-multi-tenancy-mysql-postgresql
  * User: hendisantika
  * Email: hendisantika@gmail.com
  * Telegram : @hendisantika34
  * Date: 08/05/20
  * Time: 06.08
  */
-// @Service
-@Service("UserDetailsService")
+@Service
 public class JwtUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -34,20 +32,21 @@ public class JwtUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         User user = userRepository.findByUserName(userName);
+   
 
+        
         if (null == user) {
             throw new UsernameNotFoundException("Invalid user name or password.");
         }
-        Roles roles = user.getRoles();
-        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(roles.getName()));
-
+        Roles roles =  user.getRoles();
+   		 List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+   		   authorities.add(new SimpleGrantedAuthority(roles.getName()));
+   		   
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
-                authorities);
+        		authorities);
     }
-    /*
-     * private List<SimpleGrantedAuthority> getAuthority() {
-     * return Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
-     * }
-     */
+/*
+    private List<SimpleGrantedAuthority> getAuthority() {
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
+    }*/
 }

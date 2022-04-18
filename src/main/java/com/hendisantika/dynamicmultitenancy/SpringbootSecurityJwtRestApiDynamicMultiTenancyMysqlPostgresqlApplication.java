@@ -4,13 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 //@SpringBootApplication
-@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
-// @ComponentScan
-@ComponentScan(basePackages = { "com.hendisantika.dynamicmultitenancy.tenant.repository" })
+@SpringBootApplication
 public class SpringbootSecurityJwtRestApiDynamicMultiTenancyMysqlPostgresqlApplication
         extends SpringBootServletInitializer {
 

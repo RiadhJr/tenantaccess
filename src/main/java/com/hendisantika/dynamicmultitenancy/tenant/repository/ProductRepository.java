@@ -2,6 +2,7 @@ package com.hendisantika.dynamicmultitenancy.tenant.repository;
 
 import com.hendisantika.dynamicmultitenancy.tenant.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * Created by IntelliJ IDEA.

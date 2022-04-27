@@ -1,0 +1,178 @@
+package com.hendisantika.dynamicmultitenancy.controllerschema;
+
+import com.hendisantika.dynamicmultitenancy.security.RequestAuthorization;
+import com.hendisantika.dynamicmultitenancy.tenant.entity.Categorie;
+import com.hendisantika.dynamicmultitenancy.tenant.entity.Produit;
+import com.hendisantika.dynamicmultitenancy.tenant.repository.repo.CategorieRepository;
+import com.hendisantika.dynamicmultitenancy.tenant.repository.repo.ProduitRepository;
+import com.hendisantika.dynamicmultitenancy.tenant.service.ProductService;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.io.Serializable;
+
+/**
+ * Created by IntelliJ IDEA.
+ * Project : springboot-security-jwt-rest-api-dynamic-multi-tenancy-mysql-postgresql
+ * User: hendisantika
+ * Email: hendisantika@gmail.com
+ * Telegram : @hendisantika34
+ * Date: 08/05/20
+ * Time: 06.23
+ */
+@RestController
+@RequestMapping("/api/product")
+public class StockController implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+    //rivate static final Logger LOGGER = LoggerFactory.getLogger(StockController.class);
+    private Logger logger = LoggerFactory.getLogger(StockController.class);
+    @Autowired
+	private CategorieRepository categorieRepository;
+    
+    @Autowired
+	private ProduitRepository produitRepository;
+
+    /***************************Contact***************************/
+	//GET Categories
+	@GetMapping("/categories")
+	public ResponseEntity<Object> getAllCategories(){
+		
+		try {
+			Iterable<Categorie> contacts = categorieRepository.findAll();
+			return new ResponseEntity<Object>(contacts, HttpStatus.OK);
+		} catch(Exception ex) {
+			logger.error(ex.getMessage(), ex);
+			return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+		}
+	}
+	//Get categorie by id 
+		@GetMapping("/categories/{id}")
+		public ResponseEntity<Object> getCategorieById(@PathVariable("id") Long id) {
+			try {
+				Categorie contact = categorieRepository.findById(id).get();
+				if(contact != null) {
+					return new ResponseEntity<Object>(contact, HttpStatus.OK);				
+				} else {
+					return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
+				}
+			} catch(Exception ex) {
+				logger.error(ex.getMessage(), ex);
+				return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+			}
+		}   
+	//POST categorie
+		@PostMapping("/categories")
+		public ResponseEntity<Object> createCategories(@RequestBody Categorie categorie) {
+			try {
+				Categorie savedCategorie = categorieRepository.save(categorie);
+				return new ResponseEntity<Object>(savedCategorie, HttpStatus.OK);
+			} catch(Exception ex) {
+				logger.error(ex.getMessage(), ex);
+				return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+			}
+		}
+		// update categorie
+		@PutMapping("/categories/{id}")
+		public ResponseEntity<Object> updateCategories(@PathVariable("id") Long id, @RequestBody Categorie categorie) {
+			try {
+				categorie.setCategorie_id(id);
+				Categorie savedCategorie = categorieRepository.save(categorie);
+				return new ResponseEntity<Object>(savedCategorie, HttpStatus.OK);
+			} catch(Exception ex) {
+				logger.error(ex.getMessage(), ex);
+				return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+			}
+		}
+		 
+		// delete categorie
+		@DeleteMapping("/categories/{id}")
+		public ResponseEntity<HttpStatus> deleteCategories(@PathVariable("id") Long id) {
+			try {
+				categorieRepository.deleteById(id);
+				return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+			} catch(Exception ex) {
+				logger.error(ex.getMessage(), ex);
+				return new ResponseEntity<HttpStatus>(HttpStatus.BAD_REQUEST);
+			}
+		}
+
+		/************************ FAQ ****************************/
+		//GET produits
+		@GetMapping("/produits")
+		public ResponseEntity<Object> getAllProduits(){
+			
+			try {
+				Iterable<Produit> produits = produitRepository.findAll();
+				return new ResponseEntity<Object>(produits, HttpStatus.OK);
+			} catch(Exception ex) {
+				logger.error(ex.getMessage(), ex);
+				return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+			}
+		}
+		//Get produits by id 
+			@GetMapping("/produits/{id}")
+			public ResponseEntity<Object> getContactById(@PathVariable("id") Long id) {
+				try {
+					Produit produits = produitRepository.findById(id).get();
+					if(produits != null) {
+						return new ResponseEntity<Object>(produits, HttpStatus.OK);				
+					} else {
+						return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
+					}
+				} catch(Exception ex) {
+					logger.error(ex.getMessage(), ex);
+					return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+				}
+			}   
+		//POST produits
+			@PostMapping("/produits")
+			public ResponseEntity<Object> createContacts(@RequestBody Produit produit) {
+				try {
+					Produit savedproduit = produitRepository.save(produit);
+					return new ResponseEntity<Object>(savedproduit, HttpStatus.OK);
+				} catch(Exception ex) {
+					logger.error(ex.getMessage(), ex);
+					return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+				}
+			}
+			// update produits
+			@PutMapping("/produits/{id}")
+			public ResponseEntity<Object> updateContacts(@PathVariable("id") Long id, @RequestBody Produit produit) {
+				try {
+					produit.setProduit_id(id);
+					Produit savedproduit = produitRepository.save(produit);
+					return new ResponseEntity<Object>(savedproduit, HttpStatus.OK);
+				} catch(Exception ex) {
+					logger.error(ex.getMessage(), ex);
+					return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+				}
+			}
+			 
+			// delete privacy
+			@DeleteMapping("/produits/{id}")
+			public ResponseEntity<HttpStatus> deleteContacts(@PathVariable("id") Long id) {
+				try {
+					categorieRepository.deleteById(id);
+					return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+				} catch(Exception ex) {
+					logger.error(ex.getMessage(), ex);
+					return new ResponseEntity<HttpStatus>(HttpStatus.BAD_REQUEST);
+				}
+			}
+
+}

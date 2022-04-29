@@ -1,7 +1,7 @@
 package com.hendisantika.dynamicmultitenancy.controller;
 
 import com.hendisantika.dynamicmultitenancy.security.RequestAuthorization;
-import com.hendisantika.dynamicmultitenancy.tenant.service.ProductService;
+//import com.hendisantika.dynamicmultitenancy.tenant.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class ProductController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthenticationController.class);
-
+/*
     @Autowired
     private ProductService productService;
 
@@ -38,5 +38,5 @@ public class ProductController implements Serializable {
     public ResponseEntity<Object> getAllProduct() {
         LOGGER.info("getAllProduct() method call...");
         return new ResponseEntity<>(productService.getAllProduct(), HttpStatus.OK);
-    }
+    }*/
 }

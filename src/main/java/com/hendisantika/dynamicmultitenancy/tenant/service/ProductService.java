@@ -1,4 +1,4 @@
-package com.hendisantika.dynamicmultitenancy.tenant.service;
+/*package com.hendisantika.dynamicmultitenancy.tenant.service;
 
 import com.hendisantika.dynamicmultitenancy.tenant.entity.Product;
 import com.hendisantika.dynamicmultitenancy.tenant.repository.ProductRepository;
@@ -15,7 +15,7 @@ import java.util.List;
  * Telegram : @hendisantika34
  * Date: 08/05/20
  * Time: 06.02
- */
+ *//*
 @Service
 public class ProductService {
     @Autowired
@@ -24,4 +24,4 @@ public class ProductService {
     public List<Product> getAllProduct() {
         return productRepository.findAll();
     }
-}
+}*/

@@ -25,7 +25,7 @@ import java.util.Map;
  * Time: 06.22
  */
 @RestController
-@RequestMapping("/api/auth/logout")
+@RequestMapping("/api/auth")
 public class LogoutController implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

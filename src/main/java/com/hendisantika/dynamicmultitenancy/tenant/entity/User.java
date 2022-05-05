@@ -21,15 +21,6 @@ import org.hibernate.annotations.NotFoundAction;
 
 import java.io.Serializable;
 
-/**
- * Created by IntelliJ IDEA.
- * Project : springboot-security-jwt-rest-api-dynamic-multi-tenancy-mysql-postgresql
- * User: hendisantika
- * Email: hendisantika@gmail.com
- * Telegram : @hendisantika34
- * Date: 08/05/20
- * Time: 05.59
- */
 @Entity
 @Table(name = "tbl_user")
 @Data

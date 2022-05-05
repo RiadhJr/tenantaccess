@@ -23,9 +23,13 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "role_user", schema = "public")
+@Table(name = "role_user")
 public class RoleUser implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 309976103411276072L;
 	@Id
 	@GeneratedValue
 	private Long id;

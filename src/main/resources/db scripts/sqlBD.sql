@@ -27,7 +27,7 @@ SET default_table_access_method = heap;
 -- Name: adjustment_details; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.adjustment_details (
+CREATE TABLE adjustment_details (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     quantity double precision NOT NULL,
@@ -39,14 +39,14 @@ CREATE TABLE public.adjustment_details (
 );
 
 
-ALTER TABLE public.adjustment_details OWNER TO postgres;
+ALTER TABLE adjustment_details OWNER TO postgres;
 
 --
 -- TOC entry 211 (class 1259 OID 35621)
 -- Name: adjustments; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.adjustments (
+CREATE TABLE adjustments (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -60,14 +60,14 @@ CREATE TABLE public.adjustments (
 );
 
 
-ALTER TABLE public.adjustments OWNER TO postgres;
+ALTER TABLE adjustments OWNER TO postgres;
 
 --
 -- TOC entry 212 (class 1259 OID 35626)
 -- Name: brands; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.brands (
+CREATE TABLE brands (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -78,14 +78,14 @@ CREATE TABLE public.brands (
 );
 
 
-ALTER TABLE public.brands OWNER TO postgres;
+ALTER TABLE brands OWNER TO postgres;
 
 --
 -- TOC entry 213 (class 1259 OID 35633)
 -- Name: categories; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.categories (
+CREATE TABLE categories (
     id bigint NOT NULL,
     code character varying(192) NOT NULL,
     created_at timestamp without time zone,
@@ -95,14 +95,14 @@ CREATE TABLE public.categories (
 );
 
 
-ALTER TABLE public.categories OWNER TO postgres;
+ALTER TABLE categories OWNER TO postgres;
 
 --
 -- TOC entry 214 (class 1259 OID 35638)
 -- Name: clients; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.clients (
+CREATE TABLE clients (
     id bigint NOT NULL,
     adresse character varying(191) NOT NULL,
     city character varying(191) NOT NULL,
@@ -117,14 +117,14 @@ CREATE TABLE public.clients (
 );
 
 
-ALTER TABLE public.clients OWNER TO postgres;
+ALTER TABLE clients OWNER TO postgres;
 
 --
 -- TOC entry 215 (class 1259 OID 35645)
 -- Name: currencies; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.currencies (
+CREATE TABLE currencies (
     id bigint NOT NULL,
     code character varying(192) NOT NULL,
     created_at timestamp without time zone,
@@ -135,14 +135,14 @@ CREATE TABLE public.currencies (
 );
 
 
-ALTER TABLE public.currencies OWNER TO postgres;
+ALTER TABLE currencies OWNER TO postgres;
 
 --
 -- TOC entry 216 (class 1259 OID 35652)
 -- Name: expense_categories; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.expense_categories (
+CREATE TABLE expense_categories (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -153,14 +153,14 @@ CREATE TABLE public.expense_categories (
 );
 
 
-ALTER TABLE public.expense_categories OWNER TO postgres;
+ALTER TABLE expense_categories OWNER TO postgres;
 
 --
 -- TOC entry 217 (class 1259 OID 35657)
 -- Name: expenses; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.expenses (
+CREATE TABLE expenses (
     id bigint NOT NULL,
     amount double precision NOT NULL,
     created_at timestamp without time zone,
@@ -175,14 +175,14 @@ CREATE TABLE public.expenses (
 );
 
 
-ALTER TABLE public.expenses OWNER TO postgres;
+ALTER TABLE expenses OWNER TO postgres;
 
 --
 -- TOC entry 209 (class 1259 OID 34978)
 -- Name: hibernate_sequence; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.hibernate_sequence
+CREATE SEQUENCE hibernate_sequence
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -190,28 +190,28 @@ CREATE SEQUENCE public.hibernate_sequence
     CACHE 1;
 
 
-ALTER TABLE public.hibernate_sequence OWNER TO postgres;
+ALTER TABLE hibernate_sequence OWNER TO postgres;
 
 --
 -- TOC entry 218 (class 1259 OID 35662)
 -- Name: migrations; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.migrations (
+CREATE TABLE migrations (
     id bigint NOT NULL,
     batch bigint NOT NULL,
     migration character varying(191) NOT NULL
 );
 
 
-ALTER TABLE public.migrations OWNER TO postgres;
+ALTER TABLE migrations OWNER TO postgres;
 
 --
 -- TOC entry 219 (class 1259 OID 35667)
 -- Name: password_resets; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.password_resets (
+CREATE TABLE password_resets (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     email character varying(191) NOT NULL,
@@ -220,14 +220,14 @@ CREATE TABLE public.password_resets (
 );
 
 
-ALTER TABLE public.password_resets OWNER TO postgres;
+ALTER TABLE password_resets OWNER TO postgres;
 
 --
 -- TOC entry 220 (class 1259 OID 35672)
 -- Name: payment_purchase_returns; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.payment_purchase_returns (
+CREATE TABLE payment_purchase_returns (
     id bigint NOT NULL,
     change double precision NOT NULL,
     created_at timestamp without time zone,
@@ -243,14 +243,14 @@ CREATE TABLE public.payment_purchase_returns (
 );
 
 
-ALTER TABLE public.payment_purchase_returns OWNER TO postgres;
+ALTER TABLE payment_purchase_returns OWNER TO postgres;
 
 --
 -- TOC entry 221 (class 1259 OID 35679)
 -- Name: payment_purchases; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.payment_purchases (
+CREATE TABLE payment_purchases (
     id bigint NOT NULL,
     change double precision NOT NULL,
     created_at timestamp without time zone,
@@ -266,14 +266,14 @@ CREATE TABLE public.payment_purchases (
 );
 
 
-ALTER TABLE public.payment_purchases OWNER TO postgres;
+ALTER TABLE payment_purchases OWNER TO postgres;
 
 --
 -- TOC entry 222 (class 1259 OID 35686)
 -- Name: payment_sale_returns; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.payment_sale_returns (
+CREATE TABLE payment_sale_returns (
     id bigint NOT NULL,
     change double precision NOT NULL,
     created_at timestamp without time zone,
@@ -289,14 +289,14 @@ CREATE TABLE public.payment_sale_returns (
 );
 
 
-ALTER TABLE public.payment_sale_returns OWNER TO postgres;
+ALTER TABLE payment_sale_returns OWNER TO postgres;
 
 --
 -- TOC entry 223 (class 1259 OID 35693)
 -- Name: payment_sales; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.payment_sales (
+CREATE TABLE payment_sales (
     id bigint NOT NULL,
     change double precision NOT NULL,
     created_at timestamp without time zone,
@@ -312,14 +312,14 @@ CREATE TABLE public.payment_sales (
 );
 
 
-ALTER TABLE public.payment_sales OWNER TO postgres;
+ALTER TABLE payment_sales OWNER TO postgres;
 
 --
 -- TOC entry 224 (class 1259 OID 35700)
 -- Name: payment_with_credit_card; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.payment_with_credit_card (
+CREATE TABLE payment_with_credit_card (
     id bigint NOT NULL,
     charge_id character varying(192) NOT NULL,
     created_at timestamp without time zone,
@@ -330,28 +330,28 @@ CREATE TABLE public.payment_with_credit_card (
 );
 
 
-ALTER TABLE public.payment_with_credit_card OWNER TO postgres;
+ALTER TABLE payment_with_credit_card OWNER TO postgres;
 
 --
 -- TOC entry 225 (class 1259 OID 35705)
 -- Name: permission_role; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.permission_role (
+CREATE TABLE permission_role (
     id bigint NOT NULL,
     permission_id bigint NOT NULL,
     role_id bigint NOT NULL
 );
 
 
-ALTER TABLE public.permission_role OWNER TO postgres;
+ALTER TABLE permission_role OWNER TO postgres;
 
 --
 -- TOC entry 226 (class 1259 OID 35710)
 -- Name: permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.permissions (
+CREATE TABLE permissions (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -362,14 +362,14 @@ CREATE TABLE public.permissions (
 );
 
 
-ALTER TABLE public.permissions OWNER TO postgres;
+ALTER TABLE permissions OWNER TO postgres;
 
 --
 -- TOC entry 227 (class 1259 OID 35717)
 -- Name: pos_settings; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.pos_settings (
+CREATE TABLE pos_settings (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -385,14 +385,14 @@ CREATE TABLE public.pos_settings (
 );
 
 
-ALTER TABLE public.pos_settings OWNER TO postgres;
+ALTER TABLE pos_settings OWNER TO postgres;
 
 --
 -- TOC entry 228 (class 1259 OID 35722)
 -- Name: product_variants; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.product_variants (
+CREATE TABLE product_variants (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -403,14 +403,14 @@ CREATE TABLE public.product_variants (
 );
 
 
-ALTER TABLE public.product_variants OWNER TO postgres;
+ALTER TABLE product_variants OWNER TO postgres;
 
 --
 -- TOC entry 229 (class 1259 OID 35727)
 -- Name: product_warehouse; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.product_warehouse (
+CREATE TABLE product_warehouse (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -422,14 +422,14 @@ CREATE TABLE public.product_warehouse (
 );
 
 
-ALTER TABLE public.product_warehouse OWNER TO postgres;
+ALTER TABLE product_warehouse OWNER TO postgres;
 
 --
 -- TOC entry 230 (class 1259 OID 35732)
 -- Name: products; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.products (
+CREATE TABLE products (
     id bigint NOT NULL,
     code character varying(192) NOT NULL,
     cost double precision NOT NULL,
@@ -454,14 +454,14 @@ CREATE TABLE public.products (
 );
 
 
-ALTER TABLE public.products OWNER TO postgres;
+ALTER TABLE products OWNER TO postgres;
 
 --
 -- TOC entry 231 (class 1259 OID 35739)
 -- Name: providers; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.providers (
+CREATE TABLE providers (
     id bigint NOT NULL,
     adresse character varying(191) NOT NULL,
     city character varying(191) NOT NULL,
@@ -476,14 +476,14 @@ CREATE TABLE public.providers (
 );
 
 
-ALTER TABLE public.providers OWNER TO postgres;
+ALTER TABLE providers OWNER TO postgres;
 
 --
 -- TOC entry 232 (class 1259 OID 35746)
 -- Name: purchase_details; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.purchase_details (
+CREATE TABLE purchase_details (
     id bigint NOT NULL,
     cost double precision NOT NULL,
     created_at timestamp without time zone,
@@ -501,14 +501,14 @@ CREATE TABLE public.purchase_details (
 );
 
 
-ALTER TABLE public.purchase_details OWNER TO postgres;
+ALTER TABLE purchase_details OWNER TO postgres;
 
 --
 -- TOC entry 233 (class 1259 OID 35751)
 -- Name: purchase_return_details; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.purchase_return_details (
+CREATE TABLE purchase_return_details (
     id bigint NOT NULL,
     cost numeric(16,3) NOT NULL,
     created_at timestamp without time zone,
@@ -527,14 +527,14 @@ CREATE TABLE public.purchase_return_details (
 );
 
 
-ALTER TABLE public.purchase_return_details OWNER TO postgres;
+ALTER TABLE purchase_return_details OWNER TO postgres;
 
 --
 -- TOC entry 234 (class 1259 OID 35756)
 -- Name: purchase_returns; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.purchase_returns (
+CREATE TABLE purchase_returns (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -556,14 +556,14 @@ CREATE TABLE public.purchase_returns (
 );
 
 
-ALTER TABLE public.purchase_returns OWNER TO postgres;
+ALTER TABLE purchase_returns OWNER TO postgres;
 
 --
 -- TOC entry 235 (class 1259 OID 35763)
 -- Name: purchases; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.purchases (
+CREATE TABLE purchases (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -585,14 +585,14 @@ CREATE TABLE public.purchases (
 );
 
 
-ALTER TABLE public.purchases OWNER TO postgres;
+ALTER TABLE purchases OWNER TO postgres;
 
 --
 -- TOC entry 236 (class 1259 OID 35770)
 -- Name: quotation_details; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.quotation_details (
+CREATE TABLE quotation_details (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     discount double precision,
@@ -610,14 +610,14 @@ CREATE TABLE public.quotation_details (
 );
 
 
-ALTER TABLE public.quotation_details OWNER TO postgres;
+ALTER TABLE quotation_details OWNER TO postgres;
 
 --
 -- TOC entry 237 (class 1259 OID 35775)
 -- Name: quotations; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.quotations (
+CREATE TABLE quotations (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -637,14 +637,14 @@ CREATE TABLE public.quotations (
 );
 
 
-ALTER TABLE public.quotations OWNER TO postgres;
+ALTER TABLE quotations OWNER TO postgres;
 
 --
 -- TOC entry 238 (class 1259 OID 35782)
 -- Name: role_user; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.role_user (
+CREATE TABLE role_user (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
@@ -653,14 +653,14 @@ CREATE TABLE public.role_user (
 );
 
 
-ALTER TABLE public.role_user OWNER TO postgres;
+ALTER TABLE role_user OWNER TO postgres;
 
 --
 -- TOC entry 239 (class 1259 OID 35787)
 -- Name: roles; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.roles (
+CREATE TABLE roles (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -672,14 +672,14 @@ CREATE TABLE public.roles (
 );
 
 
-ALTER TABLE public.roles OWNER TO postgres;
+ALTER TABLE roles OWNER TO postgres;
 
 --
 -- TOC entry 240 (class 1259 OID 35794)
 -- Name: sale_details; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.sale_details (
+CREATE TABLE sale_details (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -698,14 +698,14 @@ CREATE TABLE public.sale_details (
 );
 
 
-ALTER TABLE public.sale_details OWNER TO postgres;
+ALTER TABLE sale_details OWNER TO postgres;
 
 --
 -- TOC entry 241 (class 1259 OID 35799)
 -- Name: sale_return_details; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.sale_return_details (
+CREATE TABLE sale_return_details (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     discount double precision,
@@ -723,14 +723,14 @@ CREATE TABLE public.sale_return_details (
 );
 
 
-ALTER TABLE public.sale_return_details OWNER TO postgres;
+ALTER TABLE sale_return_details OWNER TO postgres;
 
 --
 -- TOC entry 242 (class 1259 OID 35804)
 -- Name: sale_returns; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.sale_returns (
+CREATE TABLE sale_returns (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -752,14 +752,14 @@ CREATE TABLE public.sale_returns (
 );
 
 
-ALTER TABLE public.sale_returns OWNER TO postgres;
+ALTER TABLE sale_returns OWNER TO postgres;
 
 --
 -- TOC entry 243 (class 1259 OID 35811)
 -- Name: sales; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.sales (
+CREATE TABLE sales (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -782,14 +782,14 @@ CREATE TABLE public.sales (
 );
 
 
-ALTER TABLE public.sales OWNER TO postgres;
+ALTER TABLE sales OWNER TO postgres;
 
 --
 -- TOC entry 244 (class 1259 OID 35818)
 -- Name: servers; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.servers (
+CREATE TABLE servers (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -802,14 +802,14 @@ CREATE TABLE public.servers (
 );
 
 
-ALTER TABLE public.servers OWNER TO postgres;
+ALTER TABLE servers OWNER TO postgres;
 
 --
 -- TOC entry 245 (class 1259 OID 35825)
 -- Name: settings; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.settings (
+CREATE TABLE settings (
     id bigint NOT NULL,
     companyadress character varying(191) NOT NULL,
     companyname character varying(191) NOT NULL,
@@ -828,14 +828,14 @@ CREATE TABLE public.settings (
 );
 
 
-ALTER TABLE public.settings OWNER TO postgres;
+ALTER TABLE settings OWNER TO postgres;
 
 --
 -- TOC entry 246 (class 1259 OID 35832)
 -- Name: transfer_details; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.transfer_details (
+CREATE TABLE transfer_details (
     id bigint NOT NULL,
     cost double precision NOT NULL,
     created_at timestamp without time zone,
@@ -853,14 +853,14 @@ CREATE TABLE public.transfer_details (
 );
 
 
-ALTER TABLE public.transfer_details OWNER TO postgres;
+ALTER TABLE transfer_details OWNER TO postgres;
 
 --
 -- TOC entry 247 (class 1259 OID 35837)
 -- Name: transfers; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.transfers (
+CREATE TABLE transfers (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     date date NOT NULL,
@@ -881,14 +881,14 @@ CREATE TABLE public.transfers (
 );
 
 
-ALTER TABLE public.transfers OWNER TO postgres;
+ALTER TABLE transfers OWNER TO postgres;
 
 --
 -- TOC entry 248 (class 1259 OID 35844)
 -- Name: units; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.units (
+CREATE TABLE units (
     id bigint NOT NULL,
     created_at timestamp without time zone,
     deleted_at timestamp without time zone,
@@ -901,14 +901,14 @@ CREATE TABLE public.units (
 );
 
 
-ALTER TABLE public.units OWNER TO postgres;
+ALTER TABLE units OWNER TO postgres;
 
 --
 -- TOC entry 249 (class 1259 OID 35851)
 -- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.users (
+CREATE TABLE users (
     id bigint NOT NULL,
     avatar character varying(191),
     created_at timestamp without time zone,
@@ -925,14 +925,14 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO postgres;
+ALTER TABLE users OWNER TO postgres;
 
 --
 -- TOC entry 250 (class 1259 OID 35858)
 -- Name: warehouses; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.warehouses (
+CREATE TABLE warehouses (
     id bigint NOT NULL,
     city character varying(192),
     country character varying(192),
@@ -946,14 +946,14 @@ CREATE TABLE public.warehouses (
 );
 
 
-ALTER TABLE public.warehouses OWNER TO postgres;
+ALTER TABLE warehouses OWNER TO postgres;
 
 --
 -- TOC entry 3325 (class 2606 OID 35620)
 -- Name: adjustment_details adjustment_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.adjustment_details
+ALTER TABLE ONLY adjustment_details
     ADD CONSTRAINT adjustment_details_pkey PRIMARY KEY (id);
 
 
@@ -962,7 +962,7 @@ ALTER TABLE ONLY public.adjustment_details
 -- Name: adjustments adjustments_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.adjustments
+ALTER TABLE ONLY adjustments
     ADD CONSTRAINT adjustments_pkey PRIMARY KEY (id);
 
 
@@ -971,7 +971,7 @@ ALTER TABLE ONLY public.adjustments
 -- Name: brands brands_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.brands
+ALTER TABLE ONLY brands
     ADD CONSTRAINT brands_pkey PRIMARY KEY (id);
 
 
@@ -980,7 +980,7 @@ ALTER TABLE ONLY public.brands
 -- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.categories
+ALTER TABLE ONLY categories
     ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
 
 
@@ -989,7 +989,7 @@ ALTER TABLE ONLY public.categories
 -- Name: clients clients_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.clients
+ALTER TABLE ONLY clients
     ADD CONSTRAINT clients_pkey PRIMARY KEY (id);
 
 
@@ -998,7 +998,7 @@ ALTER TABLE ONLY public.clients
 -- Name: currencies currencies_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.currencies
+ALTER TABLE ONLY currencies
     ADD CONSTRAINT currencies_pkey PRIMARY KEY (id);
 
 
@@ -1007,7 +1007,7 @@ ALTER TABLE ONLY public.currencies
 -- Name: expense_categories expense_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.expense_categories
+ALTER TABLE ONLY expense_categories
     ADD CONSTRAINT expense_categories_pkey PRIMARY KEY (id);
 
 
@@ -1016,7 +1016,7 @@ ALTER TABLE ONLY public.expense_categories
 -- Name: expenses expenses_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.expenses
+ALTER TABLE ONLY expenses
     ADD CONSTRAINT expenses_pkey PRIMARY KEY (id);
 
 
@@ -1025,7 +1025,7 @@ ALTER TABLE ONLY public.expenses
 -- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.migrations
+ALTER TABLE ONLY migrations
     ADD CONSTRAINT migrations_pkey PRIMARY KEY (id);
 
 
@@ -1034,7 +1034,7 @@ ALTER TABLE ONLY public.migrations
 -- Name: password_resets password_resets_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.password_resets
+ALTER TABLE ONLY password_resets
     ADD CONSTRAINT password_resets_pkey PRIMARY KEY (id);
 
 
@@ -1043,7 +1043,7 @@ ALTER TABLE ONLY public.password_resets
 -- Name: payment_purchase_returns payment_purchase_returns_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_purchase_returns
+ALTER TABLE ONLY payment_purchase_returns
     ADD CONSTRAINT payment_purchase_returns_pkey PRIMARY KEY (id);
 
 
@@ -1052,7 +1052,7 @@ ALTER TABLE ONLY public.payment_purchase_returns
 -- Name: payment_purchases payment_purchases_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_purchases
+ALTER TABLE ONLY payment_purchases
     ADD CONSTRAINT payment_purchases_pkey PRIMARY KEY (id);
 
 
@@ -1061,7 +1061,7 @@ ALTER TABLE ONLY public.payment_purchases
 -- Name: payment_sale_returns payment_sale_returns_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_sale_returns
+ALTER TABLE ONLY payment_sale_returns
     ADD CONSTRAINT payment_sale_returns_pkey PRIMARY KEY (id);
 
 
@@ -1070,7 +1070,7 @@ ALTER TABLE ONLY public.payment_sale_returns
 -- Name: payment_sales payment_sales_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_sales
+ALTER TABLE ONLY payment_sales
     ADD CONSTRAINT payment_sales_pkey PRIMARY KEY (id);
 
 
@@ -1079,7 +1079,7 @@ ALTER TABLE ONLY public.payment_sales
 -- Name: payment_with_credit_card payment_with_credit_card_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_with_credit_card
+ALTER TABLE ONLY payment_with_credit_card
     ADD CONSTRAINT payment_with_credit_card_pkey PRIMARY KEY (id);
 
 
@@ -1088,7 +1088,7 @@ ALTER TABLE ONLY public.payment_with_credit_card
 -- Name: permission_role permission_role_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.permission_role
+ALTER TABLE ONLY permission_role
     ADD CONSTRAINT permission_role_pkey PRIMARY KEY (id);
 
 
@@ -1097,7 +1097,7 @@ ALTER TABLE ONLY public.permission_role
 -- Name: permissions permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.permissions
+ALTER TABLE ONLY permissions
     ADD CONSTRAINT permissions_pkey PRIMARY KEY (id);
 
 
@@ -1106,7 +1106,7 @@ ALTER TABLE ONLY public.permissions
 -- Name: pos_settings pos_settings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.pos_settings
+ALTER TABLE ONLY pos_settings
     ADD CONSTRAINT pos_settings_pkey PRIMARY KEY (id);
 
 
@@ -1115,7 +1115,7 @@ ALTER TABLE ONLY public.pos_settings
 -- Name: product_variants product_variants_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.product_variants
+ALTER TABLE ONLY product_variants
     ADD CONSTRAINT product_variants_pkey PRIMARY KEY (id);
 
 
@@ -1124,7 +1124,7 @@ ALTER TABLE ONLY public.product_variants
 -- Name: product_warehouse product_warehouse_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.product_warehouse
+ALTER TABLE ONLY product_warehouse
     ADD CONSTRAINT product_warehouse_pkey PRIMARY KEY (id);
 
 
@@ -1133,7 +1133,7 @@ ALTER TABLE ONLY public.product_warehouse
 -- Name: products products_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.products
+ALTER TABLE ONLY products
     ADD CONSTRAINT products_pkey PRIMARY KEY (id);
 
 
@@ -1142,7 +1142,7 @@ ALTER TABLE ONLY public.products
 -- Name: providers providers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.providers
+ALTER TABLE ONLY providers
     ADD CONSTRAINT providers_pkey PRIMARY KEY (id);
 
 
@@ -1151,7 +1151,7 @@ ALTER TABLE ONLY public.providers
 -- Name: purchase_details purchase_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_details
+ALTER TABLE ONLY purchase_details
     ADD CONSTRAINT purchase_details_pkey PRIMARY KEY (id);
 
 
@@ -1160,7 +1160,7 @@ ALTER TABLE ONLY public.purchase_details
 -- Name: purchase_return_details purchase_return_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_return_details
+ALTER TABLE ONLY purchase_return_details
     ADD CONSTRAINT purchase_return_details_pkey PRIMARY KEY (id);
 
 
@@ -1169,7 +1169,7 @@ ALTER TABLE ONLY public.purchase_return_details
 -- Name: purchase_returns purchase_returns_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_returns
+ALTER TABLE ONLY purchase_returns
     ADD CONSTRAINT purchase_returns_pkey PRIMARY KEY (id);
 
 
@@ -1178,7 +1178,7 @@ ALTER TABLE ONLY public.purchase_returns
 -- Name: purchases purchases_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchases
+ALTER TABLE ONLY purchases
     ADD CONSTRAINT purchases_pkey PRIMARY KEY (id);
 
 
@@ -1187,7 +1187,7 @@ ALTER TABLE ONLY public.purchases
 -- Name: quotation_details quotation_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotation_details
+ALTER TABLE ONLY quotation_details
     ADD CONSTRAINT quotation_details_pkey PRIMARY KEY (id);
 
 
@@ -1196,7 +1196,7 @@ ALTER TABLE ONLY public.quotation_details
 -- Name: quotations quotations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotations
+ALTER TABLE ONLY quotations
     ADD CONSTRAINT quotations_pkey PRIMARY KEY (id);
 
 
@@ -1205,7 +1205,7 @@ ALTER TABLE ONLY public.quotations
 -- Name: role_user role_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.role_user
+ALTER TABLE ONLY role_user
     ADD CONSTRAINT role_user_pkey PRIMARY KEY (id);
 
 
@@ -1214,7 +1214,7 @@ ALTER TABLE ONLY public.role_user
 -- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.roles
+ALTER TABLE ONLY roles
     ADD CONSTRAINT roles_pkey PRIMARY KEY (id);
 
 
@@ -1223,7 +1223,7 @@ ALTER TABLE ONLY public.roles
 -- Name: sale_details sale_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_details
+ALTER TABLE ONLY sale_details
     ADD CONSTRAINT sale_details_pkey PRIMARY KEY (id);
 
 
@@ -1232,7 +1232,7 @@ ALTER TABLE ONLY public.sale_details
 -- Name: sale_return_details sale_return_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_return_details
+ALTER TABLE ONLY sale_return_details
     ADD CONSTRAINT sale_return_details_pkey PRIMARY KEY (id);
 
 
@@ -1241,7 +1241,7 @@ ALTER TABLE ONLY public.sale_return_details
 -- Name: sale_returns sale_returns_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_returns
+ALTER TABLE ONLY sale_returns
     ADD CONSTRAINT sale_returns_pkey PRIMARY KEY (id);
 
 
@@ -1250,7 +1250,7 @@ ALTER TABLE ONLY public.sale_returns
 -- Name: sales sales_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sales
+ALTER TABLE ONLY sales
     ADD CONSTRAINT sales_pkey PRIMARY KEY (id);
 
 
@@ -1259,7 +1259,7 @@ ALTER TABLE ONLY public.sales
 -- Name: servers servers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.servers
+ALTER TABLE ONLY servers
     ADD CONSTRAINT servers_pkey PRIMARY KEY (id);
 
 
@@ -1268,7 +1268,7 @@ ALTER TABLE ONLY public.servers
 -- Name: settings settings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.settings
+ALTER TABLE ONLY settings
     ADD CONSTRAINT settings_pkey PRIMARY KEY (id);
 
 
@@ -1277,7 +1277,7 @@ ALTER TABLE ONLY public.settings
 -- Name: transfer_details transfer_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfer_details
+ALTER TABLE ONLY transfer_details
     ADD CONSTRAINT transfer_details_pkey PRIMARY KEY (id);
 
 
@@ -1286,7 +1286,7 @@ ALTER TABLE ONLY public.transfer_details
 -- Name: transfers transfers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfers
+ALTER TABLE ONLY transfers
     ADD CONSTRAINT transfers_pkey PRIMARY KEY (id);
 
 
@@ -1295,7 +1295,7 @@ ALTER TABLE ONLY public.transfers
 -- Name: units units_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.units
+ALTER TABLE ONLY units
     ADD CONSTRAINT units_pkey PRIMARY KEY (id);
 
 
@@ -1304,7 +1304,7 @@ ALTER TABLE ONLY public.units
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.users
+ALTER TABLE ONLY users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
@@ -1313,7 +1313,7 @@ ALTER TABLE ONLY public.users
 -- Name: warehouses warehouses_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.warehouses
+ALTER TABLE ONLY warehouses
     ADD CONSTRAINT warehouses_pkey PRIMARY KEY (id);
 
 
@@ -1322,8 +1322,8 @@ ALTER TABLE ONLY public.warehouses
 -- Name: sale_returns fk1d0a6cvwatyu3oysa3qiyem7f; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_returns
-    ADD CONSTRAINT fk1d0a6cvwatyu3oysa3qiyem7f FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY sale_returns
+    ADD CONSTRAINT fk1d0a6cvwatyu3oysa3qiyem7f FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1331,8 +1331,8 @@ ALTER TABLE ONLY public.sale_returns
 -- Name: sale_return_details fk1tfngrot8ca134b7qeobxfgja; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_return_details
-    ADD CONSTRAINT fk1tfngrot8ca134b7qeobxfgja FOREIGN KEY (sale_unit_id) REFERENCES public.units(id);
+ALTER TABLE ONLY sale_return_details
+    ADD CONSTRAINT fk1tfngrot8ca134b7qeobxfgja FOREIGN KEY (sale_unit_id) REFERENCES units(id);
 
 
 --
@@ -1340,8 +1340,8 @@ ALTER TABLE ONLY public.sale_return_details
 -- Name: purchase_returns fk23hv85p8q8v08hood6el3jffx; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_returns
-    ADD CONSTRAINT fk23hv85p8q8v08hood6el3jffx FOREIGN KEY (provider_id) REFERENCES public.providers(id);
+ALTER TABLE ONLY purchase_returns
+    ADD CONSTRAINT fk23hv85p8q8v08hood6el3jffx FOREIGN KEY (provider_id) REFERENCES providers(id);
 
 
 --
@@ -1349,8 +1349,8 @@ ALTER TABLE ONLY public.purchase_returns
 -- Name: adjustment_details fk29474utthbh5so4bkix6d00pd; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.adjustment_details
-    ADD CONSTRAINT fk29474utthbh5so4bkix6d00pd FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY adjustment_details
+    ADD CONSTRAINT fk29474utthbh5so4bkix6d00pd FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1358,8 +1358,8 @@ ALTER TABLE ONLY public.adjustment_details
 -- Name: permission_role fk3vhflqw0lwbwn49xqoivrtugt; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.permission_role
-    ADD CONSTRAINT fk3vhflqw0lwbwn49xqoivrtugt FOREIGN KEY (role_id) REFERENCES public.roles(id);
+ALTER TABLE ONLY permission_role
+    ADD CONSTRAINT fk3vhflqw0lwbwn49xqoivrtugt FOREIGN KEY (role_id) REFERENCES roles(id);
 
 
 --
@@ -1367,8 +1367,8 @@ ALTER TABLE ONLY public.permission_role
 -- Name: adjustment_details fk44cq3qaq6w2akqveahjv1qq54; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.adjustment_details
-    ADD CONSTRAINT fk44cq3qaq6w2akqveahjv1qq54 FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY adjustment_details
+    ADD CONSTRAINT fk44cq3qaq6w2akqveahjv1qq54 FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1376,8 +1376,8 @@ ALTER TABLE ONLY public.adjustment_details
 -- Name: quotation_details fk47semmwcknt178jtvifd67pii; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotation_details
-    ADD CONSTRAINT fk47semmwcknt178jtvifd67pii FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY quotation_details
+    ADD CONSTRAINT fk47semmwcknt178jtvifd67pii FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1385,8 +1385,8 @@ ALTER TABLE ONLY public.quotation_details
 -- Name: sales fk5bgaw8g0rrbqdvafq36g58smk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sales
-    ADD CONSTRAINT fk5bgaw8g0rrbqdvafq36g58smk FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY sales
+    ADD CONSTRAINT fk5bgaw8g0rrbqdvafq36g58smk FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1394,8 +1394,8 @@ ALTER TABLE ONLY public.sales
 -- Name: expenses fk62n5q2inmp5rpeugm0pny5qp1; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.expenses
-    ADD CONSTRAINT fk62n5q2inmp5rpeugm0pny5qp1 FOREIGN KEY (expense_category_id) REFERENCES public.expense_categories(id);
+ALTER TABLE ONLY expenses
+    ADD CONSTRAINT fk62n5q2inmp5rpeugm0pny5qp1 FOREIGN KEY (expense_category_id) REFERENCES expense_categories(id);
 
 
 --
@@ -1403,8 +1403,8 @@ ALTER TABLE ONLY public.expenses
 -- Name: sale_return_details fk6cv7g4chqvnbn0d08ken9am8u; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_return_details
-    ADD CONSTRAINT fk6cv7g4chqvnbn0d08ken9am8u FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY sale_return_details
+    ADD CONSTRAINT fk6cv7g4chqvnbn0d08ken9am8u FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1412,8 +1412,8 @@ ALTER TABLE ONLY public.sale_return_details
 -- Name: permission_role fk6mg4g9rc8u87l0yavf8kjut05; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.permission_role
-    ADD CONSTRAINT fk6mg4g9rc8u87l0yavf8kjut05 FOREIGN KEY (permission_id) REFERENCES public.permissions(id);
+ALTER TABLE ONLY permission_role
+    ADD CONSTRAINT fk6mg4g9rc8u87l0yavf8kjut05 FOREIGN KEY (permission_id) REFERENCES permissions(id);
 
 
 --
@@ -1421,8 +1421,8 @@ ALTER TABLE ONLY public.permission_role
 -- Name: sale_details fk6nruj5m7ntwhc29etigqnlk0m; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_details
-    ADD CONSTRAINT fk6nruj5m7ntwhc29etigqnlk0m FOREIGN KEY (sale_id) REFERENCES public.sales(id);
+ALTER TABLE ONLY sale_details
+    ADD CONSTRAINT fk6nruj5m7ntwhc29etigqnlk0m FOREIGN KEY (sale_id) REFERENCES sales(id);
 
 
 --
@@ -1430,8 +1430,8 @@ ALTER TABLE ONLY public.sale_details
 -- Name: transfers fk7m5unyo9bjegg5d48k1y94w0w; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfers
-    ADD CONSTRAINT fk7m5unyo9bjegg5d48k1y94w0w FOREIGN KEY (to_warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY transfers
+    ADD CONSTRAINT fk7m5unyo9bjegg5d48k1y94w0w FOREIGN KEY (to_warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1439,8 +1439,8 @@ ALTER TABLE ONLY public.transfers
 -- Name: sale_return_details fk7pymn8afwvefhvc4jis003cwe; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_return_details
-    ADD CONSTRAINT fk7pymn8afwvefhvc4jis003cwe FOREIGN KEY (sale_return_id) REFERENCES public.sale_returns(id);
+ALTER TABLE ONLY sale_return_details
+    ADD CONSTRAINT fk7pymn8afwvefhvc4jis003cwe FOREIGN KEY (sale_return_id) REFERENCES sale_returns(id);
 
 
 --
@@ -1448,8 +1448,8 @@ ALTER TABLE ONLY public.sale_return_details
 -- Name: role_user fk7tjfd3wunlpu0di6qpu5asgen; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.role_user
-    ADD CONSTRAINT fk7tjfd3wunlpu0di6qpu5asgen FOREIGN KEY (role_id) REFERENCES public.roles(id);
+ALTER TABLE ONLY role_user
+    ADD CONSTRAINT fk7tjfd3wunlpu0di6qpu5asgen FOREIGN KEY (role_id) REFERENCES roles(id);
 
 
 --
@@ -1457,8 +1457,8 @@ ALTER TABLE ONLY public.role_user
 -- Name: purchase_return_details fk7tta5uxl8ii1e0triierd1lwo; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_return_details
-    ADD CONSTRAINT fk7tta5uxl8ii1e0triierd1lwo FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY purchase_return_details
+    ADD CONSTRAINT fk7tta5uxl8ii1e0triierd1lwo FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1466,8 +1466,8 @@ ALTER TABLE ONLY public.purchase_return_details
 -- Name: payment_sale_returns fk840y3ilxt1br9j6t7p9yeabw5; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_sale_returns
-    ADD CONSTRAINT fk840y3ilxt1br9j6t7p9yeabw5 FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY payment_sale_returns
+    ADD CONSTRAINT fk840y3ilxt1br9j6t7p9yeabw5 FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1475,8 +1475,8 @@ ALTER TABLE ONLY public.payment_sale_returns
 -- Name: adjustments fk8cmjqeon67gbb8xk8ues2v4u; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.adjustments
-    ADD CONSTRAINT fk8cmjqeon67gbb8xk8ues2v4u FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY adjustments
+    ADD CONSTRAINT fk8cmjqeon67gbb8xk8ues2v4u FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1484,8 +1484,8 @@ ALTER TABLE ONLY public.adjustments
 -- Name: product_warehouse fk8mm3bmktx4ipfnkk1r72d2qqf; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.product_warehouse
-    ADD CONSTRAINT fk8mm3bmktx4ipfnkk1r72d2qqf FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY product_warehouse
+    ADD CONSTRAINT fk8mm3bmktx4ipfnkk1r72d2qqf FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1493,8 +1493,8 @@ ALTER TABLE ONLY public.product_warehouse
 -- Name: purchase_details fk8nalokyn4ap9ebeo5hjjximls; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_details
-    ADD CONSTRAINT fk8nalokyn4ap9ebeo5hjjximls FOREIGN KEY (purchase_id) REFERENCES public.purchases(id);
+ALTER TABLE ONLY purchase_details
+    ADD CONSTRAINT fk8nalokyn4ap9ebeo5hjjximls FOREIGN KEY (purchase_id) REFERENCES purchases(id);
 
 
 --
@@ -1502,8 +1502,8 @@ ALTER TABLE ONLY public.purchase_details
 -- Name: purchase_returns fk8yvur48mh0n46de69uaojgbyw; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_returns
-    ADD CONSTRAINT fk8yvur48mh0n46de69uaojgbyw FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY purchase_returns
+    ADD CONSTRAINT fk8yvur48mh0n46de69uaojgbyw FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1511,8 +1511,8 @@ ALTER TABLE ONLY public.purchase_returns
 -- Name: payment_purchases fk98sehhe1g1i7jla6xt7dhpn34; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_purchases
-    ADD CONSTRAINT fk98sehhe1g1i7jla6xt7dhpn34 FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY payment_purchases
+    ADD CONSTRAINT fk98sehhe1g1i7jla6xt7dhpn34 FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1520,8 +1520,8 @@ ALTER TABLE ONLY public.payment_purchases
 -- Name: products fka3a4mpsfdf4d2y6r8ra3sc8mv; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.products
-    ADD CONSTRAINT fka3a4mpsfdf4d2y6r8ra3sc8mv FOREIGN KEY (brand_id) REFERENCES public.brands(id);
+ALTER TABLE ONLY products
+    ADD CONSTRAINT fka3a4mpsfdf4d2y6r8ra3sc8mv FOREIGN KEY (brand_id) REFERENCES brands(id);
 
 
 --
@@ -1529,8 +1529,8 @@ ALTER TABLE ONLY public.products
 -- Name: quotation_details fkaqydkynkh434ifin8tw1jehq6; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotation_details
-    ADD CONSTRAINT fkaqydkynkh434ifin8tw1jehq6 FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY quotation_details
+    ADD CONSTRAINT fkaqydkynkh434ifin8tw1jehq6 FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1538,8 +1538,8 @@ ALTER TABLE ONLY public.quotation_details
 -- Name: product_warehouse fkb079c7n0iwp9kyhxg05ilawqa; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.product_warehouse
-    ADD CONSTRAINT fkb079c7n0iwp9kyhxg05ilawqa FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY product_warehouse
+    ADD CONSTRAINT fkb079c7n0iwp9kyhxg05ilawqa FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1547,8 +1547,8 @@ ALTER TABLE ONLY public.product_warehouse
 -- Name: purchase_details fkb73jher2ahwkm3ufsfbjp8qrl; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_details
-    ADD CONSTRAINT fkb73jher2ahwkm3ufsfbjp8qrl FOREIGN KEY (purchase_unit_id) REFERENCES public.units(id);
+ALTER TABLE ONLY purchase_details
+    ADD CONSTRAINT fkb73jher2ahwkm3ufsfbjp8qrl FOREIGN KEY (purchase_unit_id) REFERENCES units(id);
 
 
 --
@@ -1556,8 +1556,8 @@ ALTER TABLE ONLY public.purchase_details
 -- Name: sales fkbbif9cb3ecyusyms54yvwlhd5; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sales
-    ADD CONSTRAINT fkbbif9cb3ecyusyms54yvwlhd5 FOREIGN KEY (client_id) REFERENCES public.clients(id);
+ALTER TABLE ONLY sales
+    ADD CONSTRAINT fkbbif9cb3ecyusyms54yvwlhd5 FOREIGN KEY (client_id) REFERENCES clients(id);
 
 
 --
@@ -1565,8 +1565,8 @@ ALTER TABLE ONLY public.sales
 -- Name: adjustments fkblce0mpmgcocmguvnva8ofo1s; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.adjustments
-    ADD CONSTRAINT fkblce0mpmgcocmguvnva8ofo1s FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY adjustments
+    ADD CONSTRAINT fkblce0mpmgcocmguvnva8ofo1s FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1574,8 +1574,8 @@ ALTER TABLE ONLY public.adjustments
 -- Name: purchases fkbn2k5burari3lcgietiifq9ho; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchases
-    ADD CONSTRAINT fkbn2k5burari3lcgietiifq9ho FOREIGN KEY (provider_id) REFERENCES public.providers(id);
+ALTER TABLE ONLY purchases
+    ADD CONSTRAINT fkbn2k5burari3lcgietiifq9ho FOREIGN KEY (provider_id) REFERENCES providers(id);
 
 
 --
@@ -1583,8 +1583,8 @@ ALTER TABLE ONLY public.purchases
 -- Name: sale_details fkbsd5fduysox0fquwcasmr88og; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_details
-    ADD CONSTRAINT fkbsd5fduysox0fquwcasmr88og FOREIGN KEY (sale_unit_id) REFERENCES public.units(id);
+ALTER TABLE ONLY sale_details
+    ADD CONSTRAINT fkbsd5fduysox0fquwcasmr88og FOREIGN KEY (sale_unit_id) REFERENCES units(id);
 
 
 --
@@ -1592,8 +1592,8 @@ ALTER TABLE ONLY public.sale_details
 -- Name: units fkbt2bv4sx8vh6ochwa9vwx5cmd; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.units
-    ADD CONSTRAINT fkbt2bv4sx8vh6ochwa9vwx5cmd FOREIGN KEY (base_unit) REFERENCES public.units(id);
+ALTER TABLE ONLY units
+    ADD CONSTRAINT fkbt2bv4sx8vh6ochwa9vwx5cmd FOREIGN KEY (base_unit) REFERENCES units(id);
 
 
 --
@@ -1601,8 +1601,8 @@ ALTER TABLE ONLY public.units
 -- Name: transfers fkcvgnuaekhfu7jkgfdjr2rsy6w; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfers
-    ADD CONSTRAINT fkcvgnuaekhfu7jkgfdjr2rsy6w FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY transfers
+    ADD CONSTRAINT fkcvgnuaekhfu7jkgfdjr2rsy6w FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1610,8 +1610,8 @@ ALTER TABLE ONLY public.transfers
 -- Name: purchase_details fkcxl0u6f0whli7bhn1q8ja0ba3; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_details
-    ADD CONSTRAINT fkcxl0u6f0whli7bhn1q8ja0ba3 FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY purchase_details
+    ADD CONSTRAINT fkcxl0u6f0whli7bhn1q8ja0ba3 FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1619,8 +1619,8 @@ ALTER TABLE ONLY public.purchase_details
 -- Name: purchase_details fkdardplwswx5axlhgub8gi3dxr; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_details
-    ADD CONSTRAINT fkdardplwswx5axlhgub8gi3dxr FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY purchase_details
+    ADD CONSTRAINT fkdardplwswx5axlhgub8gi3dxr FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1628,8 +1628,8 @@ ALTER TABLE ONLY public.purchase_details
 -- Name: products fkeex0i50vfsa5imebrfdiyhmp9; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.products
-    ADD CONSTRAINT fkeex0i50vfsa5imebrfdiyhmp9 FOREIGN KEY (unit_id) REFERENCES public.units(id);
+ALTER TABLE ONLY products
+    ADD CONSTRAINT fkeex0i50vfsa5imebrfdiyhmp9 FOREIGN KEY (unit_id) REFERENCES units(id);
 
 
 --
@@ -1637,8 +1637,8 @@ ALTER TABLE ONLY public.products
 -- Name: payment_sales fkfkoaea5b43flsv20nfyagv3u; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_sales
-    ADD CONSTRAINT fkfkoaea5b43flsv20nfyagv3u FOREIGN KEY (sale_id) REFERENCES public.sales(id);
+ALTER TABLE ONLY payment_sales
+    ADD CONSTRAINT fkfkoaea5b43flsv20nfyagv3u FOREIGN KEY (sale_id) REFERENCES sales(id);
 
 
 --
@@ -1646,8 +1646,8 @@ ALTER TABLE ONLY public.payment_sales
 -- Name: product_warehouse fkflvceifyxftlw7a7kfxkjfw4y; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.product_warehouse
-    ADD CONSTRAINT fkflvceifyxftlw7a7kfxkjfw4y FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY product_warehouse
+    ADD CONSTRAINT fkflvceifyxftlw7a7kfxkjfw4y FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1655,8 +1655,8 @@ ALTER TABLE ONLY public.product_warehouse
 -- Name: settings fkg4h5v1r2l88vmwpd8e54id19v; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.settings
-    ADD CONSTRAINT fkg4h5v1r2l88vmwpd8e54id19v FOREIGN KEY (currency_id) REFERENCES public.currencies(id);
+ALTER TABLE ONLY settings
+    ADD CONSTRAINT fkg4h5v1r2l88vmwpd8e54id19v FOREIGN KEY (currency_id) REFERENCES currencies(id);
 
 
 --
@@ -1664,8 +1664,8 @@ ALTER TABLE ONLY public.settings
 -- Name: payment_sales fkgolnmnuuifqd52s0h5q7tpap8; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_sales
-    ADD CONSTRAINT fkgolnmnuuifqd52s0h5q7tpap8 FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY payment_sales
+    ADD CONSTRAINT fkgolnmnuuifqd52s0h5q7tpap8 FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1673,8 +1673,8 @@ ALTER TABLE ONLY public.payment_sales
 -- Name: settings fkh0ckbipyrqgc13y4tm55a25xx; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.settings
-    ADD CONSTRAINT fkh0ckbipyrqgc13y4tm55a25xx FOREIGN KEY (client_id) REFERENCES public.clients(id);
+ALTER TABLE ONLY settings
+    ADD CONSTRAINT fkh0ckbipyrqgc13y4tm55a25xx FOREIGN KEY (client_id) REFERENCES clients(id);
 
 
 --
@@ -1682,8 +1682,8 @@ ALTER TABLE ONLY public.settings
 -- Name: products fkh366vywndv4pijim81ul56747; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.products
-    ADD CONSTRAINT fkh366vywndv4pijim81ul56747 FOREIGN KEY (unit_purchase_id) REFERENCES public.units(id);
+ALTER TABLE ONLY products
+    ADD CONSTRAINT fkh366vywndv4pijim81ul56747 FOREIGN KEY (unit_purchase_id) REFERENCES units(id);
 
 
 --
@@ -1691,8 +1691,8 @@ ALTER TABLE ONLY public.products
 -- Name: sales fkhf9hp5u4um5na1qrld83f70l2; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sales
-    ADD CONSTRAINT fkhf9hp5u4um5na1qrld83f70l2 FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY sales
+    ADD CONSTRAINT fkhf9hp5u4um5na1qrld83f70l2 FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1700,8 +1700,8 @@ ALTER TABLE ONLY public.sales
 -- Name: transfer_details fkhk1fvu2o6m083ox9tehqexn60; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfer_details
-    ADD CONSTRAINT fkhk1fvu2o6m083ox9tehqexn60 FOREIGN KEY (transfer_id) REFERENCES public.transfers(id);
+ALTER TABLE ONLY transfer_details
+    ADD CONSTRAINT fkhk1fvu2o6m083ox9tehqexn60 FOREIGN KEY (transfer_id) REFERENCES transfers(id);
 
 
 --
@@ -1709,8 +1709,8 @@ ALTER TABLE ONLY public.transfer_details
 -- Name: expenses fkhpk0n2cbnfiuu5nrgl0ika3hq; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.expenses
-    ADD CONSTRAINT fkhpk0n2cbnfiuu5nrgl0ika3hq FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY expenses
+    ADD CONSTRAINT fkhpk0n2cbnfiuu5nrgl0ika3hq FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1718,8 +1718,8 @@ ALTER TABLE ONLY public.expenses
 -- Name: role_user fkhvai2k29vlwpt9wod4sw4ghmn; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.role_user
-    ADD CONSTRAINT fkhvai2k29vlwpt9wod4sw4ghmn FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY role_user
+    ADD CONSTRAINT fkhvai2k29vlwpt9wod4sw4ghmn FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1727,8 +1727,8 @@ ALTER TABLE ONLY public.role_user
 -- Name: purchase_return_details fki1m8x9qbs31gmgk48lercfh60; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_return_details
-    ADD CONSTRAINT fki1m8x9qbs31gmgk48lercfh60 FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY purchase_return_details
+    ADD CONSTRAINT fki1m8x9qbs31gmgk48lercfh60 FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1736,8 +1736,8 @@ ALTER TABLE ONLY public.purchase_return_details
 -- Name: transfer_details fki2rtqu7atovkpcfbbdv2qfibg; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfer_details
-    ADD CONSTRAINT fki2rtqu7atovkpcfbbdv2qfibg FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY transfer_details
+    ADD CONSTRAINT fki2rtqu7atovkpcfbbdv2qfibg FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1745,8 +1745,8 @@ ALTER TABLE ONLY public.transfer_details
 -- Name: transfer_details fkiamx66lymmqbnjfy7x3hahabh; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfer_details
-    ADD CONSTRAINT fkiamx66lymmqbnjfy7x3hahabh FOREIGN KEY (purchase_unit_id) REFERENCES public.units(id);
+ALTER TABLE ONLY transfer_details
+    ADD CONSTRAINT fkiamx66lymmqbnjfy7x3hahabh FOREIGN KEY (purchase_unit_id) REFERENCES units(id);
 
 
 --
@@ -1754,8 +1754,8 @@ ALTER TABLE ONLY public.transfer_details
 -- Name: purchase_returns fkihwyabpeahrl2yv7ivjflrxlj; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_returns
-    ADD CONSTRAINT fkihwyabpeahrl2yv7ivjflrxlj FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY purchase_returns
+    ADD CONSTRAINT fkihwyabpeahrl2yv7ivjflrxlj FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1763,8 +1763,8 @@ ALTER TABLE ONLY public.purchase_returns
 -- Name: transfers fkij5isx8s41sjka4vdo2xwvfk0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfers
-    ADD CONSTRAINT fkij5isx8s41sjka4vdo2xwvfk0 FOREIGN KEY (from_warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY transfers
+    ADD CONSTRAINT fkij5isx8s41sjka4vdo2xwvfk0 FOREIGN KEY (from_warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1772,8 +1772,8 @@ ALTER TABLE ONLY public.transfers
 -- Name: quotations fkj3s7ongcvjncktb1xnyvrns07; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotations
-    ADD CONSTRAINT fkj3s7ongcvjncktb1xnyvrns07 FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY quotations
+    ADD CONSTRAINT fkj3s7ongcvjncktb1xnyvrns07 FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1781,8 +1781,8 @@ ALTER TABLE ONLY public.quotations
 -- Name: expense_categories fkjbcw6agqb7ya6s33yrxfe4ymp; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.expense_categories
-    ADD CONSTRAINT fkjbcw6agqb7ya6s33yrxfe4ymp FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY expense_categories
+    ADD CONSTRAINT fkjbcw6agqb7ya6s33yrxfe4ymp FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1790,8 +1790,8 @@ ALTER TABLE ONLY public.expense_categories
 -- Name: adjustment_details fkjmc25dl1ldwc8ejipi7ydy3dk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.adjustment_details
-    ADD CONSTRAINT fkjmc25dl1ldwc8ejipi7ydy3dk FOREIGN KEY (adjustment_id) REFERENCES public.adjustments(id);
+ALTER TABLE ONLY adjustment_details
+    ADD CONSTRAINT fkjmc25dl1ldwc8ejipi7ydy3dk FOREIGN KEY (adjustment_id) REFERENCES adjustments(id);
 
 
 --
@@ -1799,8 +1799,8 @@ ALTER TABLE ONLY public.adjustment_details
 -- Name: expenses fkky2fd53k1f85rdtkpyyimy9li; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.expenses
-    ADD CONSTRAINT fkky2fd53k1f85rdtkpyyimy9li FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY expenses
+    ADD CONSTRAINT fkky2fd53k1f85rdtkpyyimy9li FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1808,8 +1808,8 @@ ALTER TABLE ONLY public.expenses
 -- Name: quotations fkl4y8f5ujgi3fs653menqyw0j2; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotations
-    ADD CONSTRAINT fkl4y8f5ujgi3fs653menqyw0j2 FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY quotations
+    ADD CONSTRAINT fkl4y8f5ujgi3fs653menqyw0j2 FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1817,8 +1817,8 @@ ALTER TABLE ONLY public.quotations
 -- Name: sale_return_details fklfanga77ry7m7rg0ae6rbs8su; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_return_details
-    ADD CONSTRAINT fklfanga77ry7m7rg0ae6rbs8su FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY sale_return_details
+    ADD CONSTRAINT fklfanga77ry7m7rg0ae6rbs8su FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1826,8 +1826,8 @@ ALTER TABLE ONLY public.sale_return_details
 -- Name: sale_returns fklxi6530aigpci1gfjnhk7gq6y; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_returns
-    ADD CONSTRAINT fklxi6530aigpci1gfjnhk7gq6y FOREIGN KEY (client_id) REFERENCES public.clients(id);
+ALTER TABLE ONLY sale_returns
+    ADD CONSTRAINT fklxi6530aigpci1gfjnhk7gq6y FOREIGN KEY (client_id) REFERENCES clients(id);
 
 
 --
@@ -1835,8 +1835,8 @@ ALTER TABLE ONLY public.sale_returns
 -- Name: purchases fkm0ndjymn9p747pfp4515pio8i; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchases
-    ADD CONSTRAINT fkm0ndjymn9p747pfp4515pio8i FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY purchases
+    ADD CONSTRAINT fkm0ndjymn9p747pfp4515pio8i FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1844,8 +1844,8 @@ ALTER TABLE ONLY public.purchases
 -- Name: sale_details fkmu5mqpa8wg2m2ukufbchdacdm; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_details
-    ADD CONSTRAINT fkmu5mqpa8wg2m2ukufbchdacdm FOREIGN KEY (product_variant_id) REFERENCES public.product_variants(id);
+ALTER TABLE ONLY sale_details
+    ADD CONSTRAINT fkmu5mqpa8wg2m2ukufbchdacdm FOREIGN KEY (product_variant_id) REFERENCES product_variants(id);
 
 
 --
@@ -1853,8 +1853,8 @@ ALTER TABLE ONLY public.sale_details
 -- Name: quotation_details fkn4iu0kt443iyv8m6s04h5h0md; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotation_details
-    ADD CONSTRAINT fkn4iu0kt443iyv8m6s04h5h0md FOREIGN KEY (sale_unit_id) REFERENCES public.units(id);
+ALTER TABLE ONLY quotation_details
+    ADD CONSTRAINT fkn4iu0kt443iyv8m6s04h5h0md FOREIGN KEY (sale_unit_id) REFERENCES units(id);
 
 
 --
@@ -1862,8 +1862,8 @@ ALTER TABLE ONLY public.quotation_details
 -- Name: quotations fkn8qu972xetsfvcj0atbsbxj6t; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotations
-    ADD CONSTRAINT fkn8qu972xetsfvcj0atbsbxj6t FOREIGN KEY (client_id) REFERENCES public.clients(id);
+ALTER TABLE ONLY quotations
+    ADD CONSTRAINT fkn8qu972xetsfvcj0atbsbxj6t FOREIGN KEY (client_id) REFERENCES clients(id);
 
 
 --
@@ -1871,8 +1871,8 @@ ALTER TABLE ONLY public.quotations
 -- Name: sale_returns fko1brvqt2p5v2fq6jk8jd6b3v4; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_returns
-    ADD CONSTRAINT fko1brvqt2p5v2fq6jk8jd6b3v4 FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY sale_returns
+    ADD CONSTRAINT fko1brvqt2p5v2fq6jk8jd6b3v4 FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1880,8 +1880,8 @@ ALTER TABLE ONLY public.sale_returns
 -- Name: purchases fko5ayqstf3r4ec39aykkavuscp; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchases
-    ADD CONSTRAINT fko5ayqstf3r4ec39aykkavuscp FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY purchases
+    ADD CONSTRAINT fko5ayqstf3r4ec39aykkavuscp FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1889,8 +1889,8 @@ ALTER TABLE ONLY public.purchases
 -- Name: payment_purchase_returns fko70wjwtevap1rvsfraxhbdjnq; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_purchase_returns
-    ADD CONSTRAINT fko70wjwtevap1rvsfraxhbdjnq FOREIGN KEY (purchase_return_id) REFERENCES public.purchase_returns(id);
+ALTER TABLE ONLY payment_purchase_returns
+    ADD CONSTRAINT fko70wjwtevap1rvsfraxhbdjnq FOREIGN KEY (purchase_return_id) REFERENCES purchase_returns(id);
 
 
 --
@@ -1898,8 +1898,8 @@ ALTER TABLE ONLY public.payment_purchase_returns
 -- Name: products fkog2rp4qthbtt2lfyhfo32lsw9; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.products
-    ADD CONSTRAINT fkog2rp4qthbtt2lfyhfo32lsw9 FOREIGN KEY (category_id) REFERENCES public.categories(id);
+ALTER TABLE ONLY products
+    ADD CONSTRAINT fkog2rp4qthbtt2lfyhfo32lsw9 FOREIGN KEY (category_id) REFERENCES categories(id);
 
 
 --
@@ -1907,8 +1907,8 @@ ALTER TABLE ONLY public.products
 -- Name: quotation_details fkolxi2hah5a2praypvlyrxmiov; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.quotation_details
-    ADD CONSTRAINT fkolxi2hah5a2praypvlyrxmiov FOREIGN KEY (quotation_id) REFERENCES public.quotations(id);
+ALTER TABLE ONLY quotation_details
+    ADD CONSTRAINT fkolxi2hah5a2praypvlyrxmiov FOREIGN KEY (quotation_id) REFERENCES quotations(id);
 
 
 --
@@ -1916,8 +1916,8 @@ ALTER TABLE ONLY public.quotation_details
 -- Name: purchase_return_details fkom8y1bsv0fojd4bt5kgfhvbw8; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_return_details
-    ADD CONSTRAINT fkom8y1bsv0fojd4bt5kgfhvbw8 FOREIGN KEY (purchase_return_id) REFERENCES public.purchase_returns(id);
+ALTER TABLE ONLY purchase_return_details
+    ADD CONSTRAINT fkom8y1bsv0fojd4bt5kgfhvbw8 FOREIGN KEY (purchase_return_id) REFERENCES purchase_returns(id);
 
 
 --
@@ -1925,8 +1925,8 @@ ALTER TABLE ONLY public.purchase_return_details
 -- Name: product_variants fkosqitn4s405cynmhb87lkvuau; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.product_variants
-    ADD CONSTRAINT fkosqitn4s405cynmhb87lkvuau FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY product_variants
+    ADD CONSTRAINT fkosqitn4s405cynmhb87lkvuau FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1934,8 +1934,8 @@ ALTER TABLE ONLY public.product_variants
 -- Name: settings fkovtcjwa3cwvu1h6ywcmm5uc8v; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.settings
-    ADD CONSTRAINT fkovtcjwa3cwvu1h6ywcmm5uc8v FOREIGN KEY (warehouse_id) REFERENCES public.warehouses(id);
+ALTER TABLE ONLY settings
+    ADD CONSTRAINT fkovtcjwa3cwvu1h6ywcmm5uc8v FOREIGN KEY (warehouse_id) REFERENCES warehouses(id);
 
 
 --
@@ -1943,8 +1943,8 @@ ALTER TABLE ONLY public.settings
 -- Name: payment_purchases fkpbq8vv1l2uiieragfbuvigddq; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_purchases
-    ADD CONSTRAINT fkpbq8vv1l2uiieragfbuvigddq FOREIGN KEY (purchase_id) REFERENCES public.purchases(id);
+ALTER TABLE ONLY payment_purchases
+    ADD CONSTRAINT fkpbq8vv1l2uiieragfbuvigddq FOREIGN KEY (purchase_id) REFERENCES purchases(id);
 
 
 --
@@ -1952,8 +1952,8 @@ ALTER TABLE ONLY public.payment_purchases
 -- Name: payment_sale_returns fkqb0h1qwj9dc6ytrqq0af3ncwm; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_sale_returns
-    ADD CONSTRAINT fkqb0h1qwj9dc6ytrqq0af3ncwm FOREIGN KEY (sale_return_id) REFERENCES public.sale_returns(id);
+ALTER TABLE ONLY payment_sale_returns
+    ADD CONSTRAINT fkqb0h1qwj9dc6ytrqq0af3ncwm FOREIGN KEY (sale_return_id) REFERENCES sale_returns(id);
 
 
 --
@@ -1961,8 +1961,8 @@ ALTER TABLE ONLY public.payment_sale_returns
 -- Name: transfer_details fkqh3r55166n1cn6du14puixl3q; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.transfer_details
-    ADD CONSTRAINT fkqh3r55166n1cn6du14puixl3q FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY transfer_details
+    ADD CONSTRAINT fkqh3r55166n1cn6du14puixl3q FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1970,8 +1970,8 @@ ALTER TABLE ONLY public.transfer_details
 -- Name: sale_details fkqvh82ispfukxa2yssnok0m12o; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.sale_details
-    ADD CONSTRAINT fkqvh82ispfukxa2yssnok0m12o FOREIGN KEY (product_id) REFERENCES public.products(id);
+ALTER TABLE ONLY sale_details
+    ADD CONSTRAINT fkqvh82ispfukxa2yssnok0m12o FOREIGN KEY (product_id) REFERENCES products(id);
 
 
 --
@@ -1979,8 +1979,8 @@ ALTER TABLE ONLY public.sale_details
 -- Name: products fkr1e7sd726jtaifeam5h2i10pk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.products
-    ADD CONSTRAINT fkr1e7sd726jtaifeam5h2i10pk FOREIGN KEY (unit_sale_id) REFERENCES public.units(id);
+ALTER TABLE ONLY products
+    ADD CONSTRAINT fkr1e7sd726jtaifeam5h2i10pk FOREIGN KEY (unit_sale_id) REFERENCES units(id);
 
 
 --
@@ -1988,8 +1988,8 @@ ALTER TABLE ONLY public.products
 -- Name: payment_purchase_returns fks00nu29ftrlrj88nefke2cxn0; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.payment_purchase_returns
-    ADD CONSTRAINT fks00nu29ftrlrj88nefke2cxn0 FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE ONLY payment_purchase_returns
+    ADD CONSTRAINT fks00nu29ftrlrj88nefke2cxn0 FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -1997,8 +1997,8 @@ ALTER TABLE ONLY public.payment_purchase_returns
 -- Name: purchase_return_details fkslcedf3s0jqjuflg9eonve6q3; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.purchase_return_details
-    ADD CONSTRAINT fkslcedf3s0jqjuflg9eonve6q3 FOREIGN KEY (purchase_unit_id) REFERENCES public.units(id);
+ALTER TABLE ONLY purchase_return_details
+    ADD CONSTRAINT fkslcedf3s0jqjuflg9eonve6q3 FOREIGN KEY (purchase_unit_id) REFERENCES units(id);
 
 
 -- Completed on 2022-04-29 13:50:32

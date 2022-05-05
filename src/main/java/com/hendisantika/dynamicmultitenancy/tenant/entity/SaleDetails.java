@@ -23,9 +23,13 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "sale_details", schema = "public")
+@Table(name = "sale_details")
 public class SaleDetails implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6635288470094511157L;
 	@Id
 	@GeneratedValue
 	private Long id;

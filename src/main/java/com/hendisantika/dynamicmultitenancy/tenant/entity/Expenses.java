@@ -1,5 +1,5 @@
 package com.hendisantika.dynamicmultitenancy.tenant.entity;
-// Generated 23 avr. 2022, 13:09:37 by Hibernate Tools 4.3.6.Final
+
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -23,9 +23,13 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "expenses", schema = "public")
+@Table(name = "expenses")
 public class Expenses implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2471242130873173199L;
 	@Id
 	@GeneratedValue
 	private Long id;
